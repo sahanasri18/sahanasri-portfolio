@@ -36,6 +36,48 @@ const ProjectsSection = () => {
         "Random Forest Classifier for detecting cracks in surface images, trained on the SDNET2018 dataset.",
       link: "https://github.com/sahanasri18/crack_detector",
     },
+    {
+      title: "Call Drop Prediction System",
+      description:
+        "Machine learning system to predict telecom call drops using network KPIs with real-time and batch CSV predictions via Streamlit.",
+      link: "https://github.com/sahanasri18/Call-Drop-Prediction-Network-Issue-Detection",
+    },
+    {
+      title: "Drug Recommendation System",
+      description: "ML-based system recommending medications based on patient history and conditions.",
+      techStack: "Python, Pandas, Scikit-learn, Streamlit",
+      link: "https://github.com/sahanasri18/Drug-Recommendation-System",
+    },
+    {
+      title: "Early Sepsis Detection System",
+      description: "Predicts sepsis 6 hours before onset using clinical time-series patient data.",
+      techStack: "Python, Pandas, Scikit-learn, Keras/PyTorch, Streamlit",
+      link: "https://github.com/sahanasri18/early_sepsis_detection",
+    },
+    {
+      title: "Hospital Readmission Prediction (Diabetes)",
+      description: "Predicts 30-day hospital readmissions for diabetic patients using EHR data and feature engineering.",
+      techStack: "Python, Pandas, Scikit-learn, XGBoost, Streamlit",
+      link: "https://github.com/sahanasri18/Hospital-Readmission-Prediction",
+    },
+    {
+      title: "Dynamic Pricing Optimization System",
+      description: "Uses ML to predict optimal product prices based on demand, competition, and inventory to maximize revenue.",
+      techStack: "Python, Pandas, Scikit-learn, XGBoost, Streamlit",
+      link: "https://github.com/sahanasri18/dynamic-pricing-optimization-system",
+    },
+    {
+      title: "Multi-Store SKU Forecasting System",
+      description: "Uses ML and time-series forecasting to predict sales for SKUs across 10 stores, helping optimize inventory and plan stock efficiently.",
+      techStack: "Python, Pandas, Scikit-learn, XGBoost, Prophet, Streamlit",
+      link: "https://github.com/sahanasri18/Multi-Store-SKU-Forecasting",
+    },
+    {
+      title: "Price Elasticity Analysis System",
+      description: "Analyzes how price changes affect demand across product categories and identifies elastic/inelastic products using ML and regression models.",
+      techStack: "Python, Pandas, Statsmodels, Scikit-learn, Streamlit, Plotly",
+      link: "https://github.com/sahanasri18/Price-Elasticity-Analysis",
+    },
   ];
 
   return (
@@ -50,10 +92,20 @@ const ProjectsSection = () => {
               key={index}
               className="bg-card border border-border rounded-2xl p-6 shadow-warm hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
             >
+              {project.image && (
+                <div className="w-full h-32 bg-muted rounded-lg mb-4 flex items-center justify-center text-muted-foreground text-sm">
+                  Screenshot Placeholder
+                </div>
+              )}
               <h3 className="text-xl font-semibold text-primary mb-3">
                 {project.title}
               </h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
+              {project.techStack && (
+                <p className="text-sm text-muted-foreground mb-4">
+                  <strong>Tech Stack:</strong> {project.techStack}
+                </p>
+              )}
               <a
                 href={project.link}
                 target="_blank"

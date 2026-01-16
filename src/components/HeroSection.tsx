@@ -49,7 +49,7 @@ const HeroSection = () => {
                 ))}
               </div>
 
-              {/* Social & Resume Buttons */}
+              {/* Social Links */}
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <a
                   href="https://github.com/sahanasri18"
@@ -66,13 +66,6 @@ const HeroSection = () => {
                   className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-2xl hover:scale-105 transition-all duration-300 shadow-soft font-medium font-poppins"
                 >
                   <Linkedin size={20} /> LinkedIn
-                </a>
-                <a
-                  href="/Sahana-Resume.pdf"
-                  download="Sahana-Resume.pdf"
-                  className="flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-2xl hover:scale-105 transition-all duration-300 shadow-soft font-medium font-poppins"
-                >
-                   Resume
                 </a>
               </div>
             </div>

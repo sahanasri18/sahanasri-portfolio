@@ -1,7 +1,6 @@
 const SkillsSection = () => {
   const skills = [
-    'Python', 'SQL', 'C++', 'Java', 'C', 
-    'MongoDB', 'AI/ML', 'Data Science', 'Streamlit',
+    'SQL', 'Power BI', 'Excel', 'Python', 'Power Query', 'DAX', 'Data Visualization', 'Dashboard Development', 'KPI Reporting', 'Business Intelligence', 'Data Analysis', 'Reporting Analyst'
   ];
 
   return (
@@ -9,10 +8,10 @@ const SkillsSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-foreground mb-4">
-            Skills & Technologies
+            Technical Skills
           </h2>
           <p className="text-center text-muted-foreground mb-16 text-lg font-poppins">
-            Technical expertise and core competencies
+            Key analytics skills and tools for data-driven business intelligence and reporting.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">

@@ -1,49 +1,40 @@
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "DeClickify – Clickbait Detection System",
-      description: "AI-powered clickbait detection platform using Machine Learning and NLP.",
-      githubLink: "https://github.com/sahanasri18/Clickbait_detection",
-      demoLink: "https://declickify-frontend.onrender.com/",
-      techStack: ["React.js", "FastAPI", "Python", "NLP", "Machine Learning"],
+      title: "IT Support Incident Analysis Dashboard",
+      description: "Power BI dashboard for IT incident trends, SLA monitoring, and support performance analysis.",
+      toolsUsed: ["Power BI", "SQL", "Excel", "DAX", "Power Query"],
+      keyFeatures: ["Incident volume trend analysis", "SLA compliance KPI tracking", "Issue category and severity filtering"],
+      githubLink: "https://github.com/sahanasri18/IT-Support-Incident-Analysis-Dashboard"
     },
     {
-      title: "AI Trade",
-      description: "An AI-driven stock trading app using a custom Gym-style environment with real-time yfinance data, trained with a DQN agent.",
-      githubLink: "https://github.com/sahanasri18/ai_trade",
+      title: "Multi-Store SKU Forecasting",
+      description: "Demand forecasting analytics across stores and SKUs to support inventory planning.",
+      toolsUsed: ["Python", "Pandas", "Excel", "Data Visualization"],
+      keyFeatures: ["SKU-level demand forecasting", "Seasonal sales trend analysis", "Inventory planning support"],
+      githubLink: "https://github.com/sahanasri18/Multi-Store-SKU-Forecasting"
     },
     {
-      title: "Next Word Predictor",
-      description: "LSTM model trained on Wikipedia text data to predict the next word in real time with dynamic user input.",
-      githubLink: "https://github.com/sahanasri18/next_word_predictor",
+      title: "Price Elasticity Analysis",
+      description: "Pricing analytics project modeling demand response to price changes for revenue optimization.",
+      toolsUsed: ["Python", "Excel", "Data Visualization", "Statistical Analysis"],
+      keyFeatures: ["Demand elasticity modeling", "Price sensitivity charts", "Revenue impact evaluation"],
+      githubLink: "https://github.com/sahanasri18/Price-Elasticity-Analysis"
     },
     {
-      title: "User Segmentation",
-      description: "Dynamic CSV uploads, feature selection, and KMeans clustering with interactive visualizations powered by Plotly.",
-      githubLink: "https://github.com/sahanasri18/user_segmentation",
-    },
-    {
-      title: "Emotion Detection",
-      description: "CNN-based model to detect human emotions from uploaded images using Streamlit, OpenCV, and TensorFlow/Keras.",
-      githubLink: "https://github.com/sahanasri18/Emotion_detection",
-    },
-    {
-      title: "Loan Recovery System",
-      description: "Machine learning-powered tool for predicting loan recovery chances using historical data and payment patterns.",
-      githubLink: "https://github.com/sahanasri18/loan_recovery_system",
-    },
-    {
-      title: "Crack Detector",
-      description: "Random Forest Classifier for detecting cracks in surface images, trained on the SDNET2018 dataset.",
-      githubLink: "https://github.com/sahanasri18/crack_detector",
-    },
+      title: "User Segmentation Analysis",
+      description: "Customer segmentation analysis to identify high-value audience groups and behavior-based segments.",
+      toolsUsed: ["Python", "SQL", "Clustering", "Data Visualization"],
+      keyFeatures: ["Segment profiling", "Cohort behavior analysis", "Actionable audience insights"],
+      githubLink: "https://github.com/sahanasri18/user_segmentation"
+    }
   ];
 
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-poppins font-bold text-center mb-12 text-foreground">
-          Projects
+          Featured Projects
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -56,9 +47,11 @@ const ProjectsSection = () => {
                 {project.title}
               </h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
-              {project.techStack ? (
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
+
+              <div className="mb-4">
+                <p className="text-sm font-semibold text-foreground mb-2">Tools Used</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.toolsUsed.map((tech) => (
                     <span
                       key={tech}
                       className="rounded-full border border-border/70 px-3 py-1 text-xs text-muted-foreground"
@@ -67,28 +60,28 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-              ) : null}
+              </div>
+
+              <div className="mb-4">
+                <p className="text-sm font-semibold text-foreground mb-2">Key Features</p>
+                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                  {project.keyFeatures.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="flex flex-wrap gap-3">
-                {project.githubLink ? (
+                {project.githubLink && (
                   <a
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300"
                   >
-                    View Code
+                    View GitHub Repository
                   </a>
-                ) : null}
-                {project.demoLink ? (
-                  <a
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300"
-                  >
-                    Live Demo
-                  </a>
-                ) : null}
+                )}
               </div>
             </div>
           ))}

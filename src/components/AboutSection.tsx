@@ -15,10 +15,7 @@ const AboutSection = () => {
                   About Me
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed font-poppins">
-                  I'm an aspiring data scientist with a strong passion for solving real-world problems using AI. 
-                  I explore innovative ideas and enjoy building intelligent projects that bridge the gap between 
-                  complex algorithms and practical solutions. Every project is an opportunity to learn something 
-                  new and make a meaningful impact.
+                  I am a Data Analyst and BI Analyst focused on turning complex datasets into clear business insights. I build dashboards, automate reporting, and deliver data-driven recommendations using SQL, Power BI, Python, and Excel to support smarter decisions and measurable outcomes.
                 </p>
               </div>
             </div>

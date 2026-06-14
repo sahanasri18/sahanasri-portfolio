@@ -1,10 +1,10 @@
 import { Github, Linkedin } from 'lucide-react';
 
 const HeroSection = () => {
-  const skills = ['Python', 'Streamlit', 'SQL', 'C', 'C++', 'Machine Learning', 'AI', 'Data Science'];
+  const skills = ['SQL', 'Power BI', 'Excel', 'Python', 'Power Query', 'DAX', 'Data Visualization', 'KPI Reporting', 'Dashboard Development'];
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden py-20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden py-20">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -26,13 +26,16 @@ const HeroSection = () => {
             <div className="text-center lg:text-left space-y-8 order-1 lg:order-2">
               <div>
                 <h1 className="text-5xl md:text-6xl font-poppins font-bold text-foreground mb-4 leading-tight">
-                  Hi, I'm <span className="text-primary">Sahana Sri</span>
+                  Data Analyst & BI Analyst
                 </h1>
                 <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium mb-6 font-poppins">
-                  AI & Data Science Enthusiast
+                  Transforming Data into Actionable Insights
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8 font-poppins">
-                  Passionate about building intelligent solutions and exploring the endless possibilities of AI.
+                  Leveraging SQL, Power BI, Python, and Excel to build dashboards, uncover patterns, and drive business decisions with clean data storytelling.
+                </p>
+                <p className="text-sm text-muted-foreground font-medium mb-6 font-poppins">
+                  SQL | Power BI | Python | Excel | Data Visualization
                 </p>
               </div>
 

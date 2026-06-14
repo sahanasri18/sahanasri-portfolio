@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-foreground font-poppins font-medium mb-4">
-                              by Sahana Sri
+            Data Analyst & BI Analyst portfolio by Sahana Sri
           </p>
           
           <div className="flex justify-center gap-6">

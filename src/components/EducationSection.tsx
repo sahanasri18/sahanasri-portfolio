@@ -3,7 +3,7 @@ import { GraduationCap, Code, Smartphone, BarChart3, Cloud, Briefcase } from 'lu
 const EducationSection = () => {
   const certifications = [
     {
-      title: "AI & Prompt Engineering ",
+      title: "Business Intelligence Foundations",
       provider: "Acutix LLP",
       duration: "Apr – Jun 2025",
       icon: <Briefcase className="w-6 h-6" />
@@ -13,12 +13,6 @@ const EducationSection = () => {
       provider: "TechnoHacks EduTech",
       duration: "Aug 2024",
       icon: <Code className="w-6 h-6" />
-    },
-    {
-      title: "Digital Marketing",
-      provider: "Joy Technologies", 
-      duration: "Sep – Oct 2024",
-      icon: <Smartphone className="w-6 h-6" />
     },
     {
       title: "Data Analytics Simulation",
@@ -31,6 +25,12 @@ const EducationSection = () => {
       provider: "AWS (Forage)",
       duration: "Feb 2025", 
       icon: <Cloud className="w-6 h-6" />
+    },
+    {
+      title: "Digital Marketing",
+      provider: "Joy Technologies", 
+      duration: "Sep – Oct 2024",
+      icon: <Smartphone className="w-6 h-6" />
     }
   ];
 
@@ -56,7 +56,7 @@ const EducationSection = () => {
                       SA Engineering College, Chennai
                     </h4>
                     <p className="text-primary font-medium mb-1 font-poppins">
-                      B.Tech – Artificial Intelligence and Data Science
+                      B.Tech – Data Science and Analytics
                     </p>
                     <p className="text-muted-foreground font-poppins">
                       (2022–2026) – CGPA: 8.67

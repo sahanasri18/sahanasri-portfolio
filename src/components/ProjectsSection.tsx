@@ -27,6 +27,13 @@ const ProjectsSection = () => {
       toolsUsed: ["Python", "SQL", "Clustering", "Data Visualization"],
       keyFeatures: ["Segment profiling", "Cohort behavior analysis", "Actionable audience insights"],
       githubLink: "https://github.com/sahanasri18/user_segmentation"
+    },
+    {
+      title: "DeClickify – Clickbait Detection",
+      description: "Headline quality and clickbait classification project with interactive reporting.",
+      toolsUsed: ["Python", "NLP", "Streamlit", "Data Visualization"],
+      keyFeatures: ["Headline scoring", "Interactive classification reports", "Exportable CSV results"],
+      githubLink: "https://github.com/sahanasri18/Clickbait_detection"
     }
   ];
 

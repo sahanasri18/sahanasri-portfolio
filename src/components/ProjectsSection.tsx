@@ -38,18 +38,30 @@ const ProjectsSection = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
+          {projects.map((project, index) => {
+            const repoName = project.githubLink ? project.githubLink.split('/').pop() : null;
+            const imageSrc = repoName ? `/projects/${repoName}.png` : null;
+            return (
             <div
               key={index}
               className="bg-card border border-border rounded-2xl p-6 shadow-warm hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
             >
+              {imageSrc && (
+                <img
+                  src={imageSrc}
+                  alt={project.title + ' screenshot'}
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                  onError={(e:any) => { e.currentTarget.style.display = 'none'; }}
+                />
+              )}
+
               <h3 className="text-xl font-semibold text-primary mb-3">
                 {project.title}
               </h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
 
               <div className="mb-4">
-                <p className="text-sm font-semibold text-foreground mb-2">Tools Used</p>
+                <p className="text-sm font-semibold text-foreground mb-2">Technologies</p>
                 <div className="flex flex-wrap gap-2">
                   {project.toolsUsed.map((tech) => (
                     <span
@@ -84,7 +96,7 @@ const ProjectsSection = () => {
                 )}
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </section>

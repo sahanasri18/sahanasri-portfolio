@@ -25,6 +25,7 @@ const HeroSection = () => {
             {/* Text Content */}
             <div className="text-center lg:text-left space-y-8 order-1 lg:order-2">
               <div>
+                <p className="text-xl md:text-2xl text-primary font-medium mb-2 font-poppins">Sahana Sri</p>
                 <h1 className="text-5xl md:text-6xl font-poppins font-bold text-foreground mb-4 leading-tight">
                   Data Analyst & BI Analyst
                 </h1>

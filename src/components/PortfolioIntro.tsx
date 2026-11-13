@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { SkipForward } from 'lucide-react';
 
-type ThreeModule = typeof import('three');
-
 const PortfolioIntro = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [visible, setVisible] = useState(true);
@@ -30,7 +28,7 @@ const PortfolioIntro = () => {
     const started = performance.now();
     const moduleUrl = 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js';
 
-    import(/* @vite-ignore */ moduleUrl).then((THREE: ThreeModule) => {
+    import(/* @vite-ignore */ moduleUrl).then((THREE: any) => {
       if (disposed || !canvasRef.current) return;
       scene = new THREE.Scene();
       scene.fog = new THREE.FogExp2(0x05080d, 0.035);

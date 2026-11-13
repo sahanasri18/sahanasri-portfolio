@@ -1,57 +1,46 @@
-const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "AI-Powered Customer Support Intelligence Platform",
-      description: "A full-stack ticket management application with role-based access, ticket workflows, MySQL-backed analytics and a scikit-learn text classifier that suggests ticket categories. The model uses a synthetic dataset and is intended for demonstration, not real customer traffic.",
-      tools: ["Python", "FastAPI", "React", "TypeScript", "MySQL", "scikit-learn"],
-      link: "https://github.com/sahanasri18/ai-customer-support-intelligence"
-    },
-    {
-      title: "DeClickify – AI-Powered Clickbait Detection",
-      description: "An NLP and deep-learning project for classifying news headlines, with a web interface and API for headline analysis.",
-      tools: ["Python", "TensorFlow / Keras", "NLP", "React"],
-      link: "https://github.com/sahanasri18/Clickbait_detection"
-    },
-    {
-      title: "Emotion Detection from Images",
-      description: "A Streamlit application that uses a trained CNN model to detect facial emotions in uploaded images.",
-      tools: ["Python", "TensorFlow / Keras", "OpenCV", "Streamlit"],
-      link: "https://github.com/sahanasri18/Emotion_detection"
-    },
-    {
-      title: "Call Drop Prediction & Network Issue Detection",
-      description: "A telecom analytics project that generates synthetic network KPI data, compares classification models and provides an interactive call-drop risk dashboard. Reported model results are based on synthetic data.",
-      tools: ["Python", "Machine Learning", "Random Forest", "Streamlit"],
-      link: "https://github.com/sahanasri18/Call-Drop-Prediction-Network-Issue-Detection"
-    },
-    {
-      title: "IT Support Incident Analysis Dashboard",
-      description: "A Power BI dashboard for exploring support ticket trends, department workloads and incident priority distribution.",
-      tools: ["Power BI", "Data Analysis", "Data Visualization"],
-      link: "https://github.com/sahanasri18/IT-Support-Incident-Analysis-Dashboard"
-    }
-  ];
+import { ArrowUpRight, Github } from 'lucide-react';
 
-  return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-poppins font-bold text-center mb-4 text-foreground">Featured Projects</h2>
-        <p className="text-center text-muted-foreground mb-12">Selected work across AI, machine learning, Python and data analysis.</p>
-        <div className="grid md:grid-cols-2 gap-7 max-w-6xl mx-auto">
-          {projects.map((project) => (
-            <article key={project.title} className="bg-card border border-border rounded-2xl p-7 shadow-warm flex flex-col">
-              <h3 className="text-xl font-semibold text-primary mb-3">{project.title}</h3>
-              <p className="text-muted-foreground mb-5 leading-relaxed">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tools.map((tool) => <span key={tool} className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">{tool}</span>)}
-              </div>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex w-fit px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90">View GitHub Repository</a>
+const projects = [
+  { title: 'AI-Powered Customer Support Intelligence Platform', category: 'Full-stack AI', description: 'A customer-support platform for ticket creation, triage, status tracking and workload analytics. Includes role-based access, MySQL persistence and a TF-IDF ticket-category suggestion model.', tools: ['Python', 'FastAPI', 'React', 'TypeScript', 'MySQL', 'scikit-learn'], link: 'https://github.com/sahanasri18/ai-customer-support-intelligence', note: 'Model evaluation uses synthetic data; not validated for real customer traffic.' },
+  { title: 'CareCode – Emergency Medical ID Platform', category: 'Full-stack application', description: 'A web platform that lets users store essential emergency information and share it through a QR code. Includes authentication, medical profiles, emergency contacts, hospital search and an emergency access page.', tools: ['React', 'FastAPI', 'PostgreSQL', 'JWT', 'Python'], link: 'https://github.com/sahanasri18/Care-Code', note: 'Includes documented backend tests and security controls.' },
+  { title: 'GlobalConnect Live Translator', category: 'Final-year project', description: 'A real-time virtual meeting translation application designed to reduce language barriers, with speech and text translation, sign-language features and meeting summaries.', tools: ['React', 'TypeScript', 'Python', 'FastAPI', 'MongoDB', 'WebRTC', 'Whisper', 'MediaPipe'], link: 'https://github.com/sahanasri18', note: 'Project overview; source repository is not separately linked.' },
+  { title: 'DeClickify – AI Clickbait Detection', category: 'NLP / Deep learning', description: 'A headline analysis application using NLP and a deep-learning model, with a web interface and API for individual and batch predictions.', tools: ['Python', 'TensorFlow', 'Keras', 'NLP', 'React'], link: 'https://github.com/sahanasri18/Clickbait_detection' },
+  { title: 'Early Sepsis Detection System', category: 'Healthcare ML', description: 'An end-to-end time-series ML project using patient vital-sign data, Random Forest and LSTM models, with a Streamlit dashboard for risk exploration.', tools: ['Python', 'TensorFlow', 'LSTM', 'scikit-learn', 'Streamlit'], link: 'https://github.com/sahanasri18/early_sepsis_detection', note: 'Uses synthetic clinical data; not for medical diagnosis.' },
+  { title: 'Smart Loan Recovery System', category: 'FinTech / ML', description: 'A Streamlit application that estimates loan repayment risk from applicant and loan details using a Random Forest classification pipeline.', tools: ['Python', 'Pandas', 'scikit-learn', 'Streamlit', 'MongoDB'], link: 'https://github.com/sahanasri18/loan_recovery_system' },
+  { title: 'Drug Recommendation System', category: 'Healthcare ML', description: 'A machine-learning demonstration that processes patient attributes and condition data to generate medication-category recommendations with an interactive dashboard.', tools: ['Python', 'Random Forest', 'Pandas', 'scikit-learn', 'Streamlit'], link: 'https://github.com/sahanasri18/Drug-Recommendation-System', note: 'Uses synthetic data and is for learning only, not clinical use.' },
+  { title: 'Call Drop Prediction & Network Issue Detection', category: 'Telecom ML', description: 'A telecom analytics project that compares classification models on simulated network KPIs and provides single and batch call-drop risk predictions.', tools: ['Python', 'Random Forest', 'Pandas', 'scikit-learn', 'Streamlit'], link: 'https://github.com/sahanasri18/Call-Drop-Prediction-Network-Issue-Detection', note: 'Performance figures are based on synthetic data.' },
+  { title: 'Multi-Store SKU Forecasting System', category: 'Time-series / ML', description: 'A retail forecasting pipeline with sales-data generation, lag and rolling-window features, XGBoost forecasting and an interactive inventory dashboard.', tools: ['Python', 'XGBoost', 'Pandas', 'Feature Engineering', 'Streamlit'], link: 'https://github.com/sahanasri18/Multi-Store-SKU-Forecasting', note: 'Uses generated retail data.' },
+  { title: 'AI Trading Agent', category: 'Reinforcement learning', description: 'An experimental trading agent built around a Deep Q-Network, a custom trading environment and a Streamlit interface for exploring trade decisions.', tools: ['Python', 'Deep Q-Learning', 'Gym-style environment', 'yfinance', 'Streamlit'], link: 'https://github.com/sahanasri18/ai_trade', note: 'Educational project; not investment advice or a live trading service.' },
+  { title: 'Crack Detection using Machine Learning', category: 'Computer vision', description: 'An image-classification application that extracts grayscale image features and uses a Random Forest model to classify surfaces as cracked or non-cracked.', tools: ['Python', 'OpenCV', 'Random Forest', 'Streamlit'], link: 'https://github.com/sahanasri18/crack_detector' },
+  { title: 'Emotion Detection from Images', category: 'Computer vision', description: 'A Streamlit application that uses a CNN model and OpenCV to detect faces and classify visible facial expressions in uploaded images.', tools: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'Streamlit'], link: 'https://github.com/sahanasri18/Emotion_detection' },
+  { title: 'User Segmentation', category: 'Unsupervised learning', description: 'A CSV-based segmentation app that applies a trained KMeans model and interactive visualizations to explore groups in user data.', tools: ['Python', 'KMeans', 'scikit-learn', 'Plotly', 'Streamlit'], link: 'https://github.com/sahanasri18/user_segmentation' },
+  { title: 'Next Word Prediction using LSTM', category: 'NLP / Deep learning', description: 'A text prediction project that trains an LSTM model on a Wikipedia text corpus and serves next-word suggestions through a Streamlit interface.', tools: ['Python', 'LSTM', 'TensorFlow / Keras', 'NLP', 'Streamlit'], link: 'https://github.com/sahanasri18/next_word_predictor' },
+  { title: 'IT Support Incident Analysis Dashboard', category: 'Data analytics', description: 'A Power BI dashboard for exploring support-ticket trends, department workloads, priority distribution and incident patterns with interactive filters.', tools: ['Power BI', 'CSV', 'Data Analysis', 'Data Visualization'], link: 'https://github.com/sahanasri18/IT-Support-Incident-Analysis-Dashboard' }
+];
+
+const ProjectsSection = () => (
+  <section id="projects" className="py-24 bg-background">
+    <div className="container mx-auto px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+          <div><p className="text-primary text-sm font-bold tracking-[.2em] uppercase mb-3">Selected work</p><h2 className="text-4xl sm:text-5xl font-bold text-foreground">Projects I've built</h2><p className="mt-4 max-w-2xl text-muted-foreground leading-7">A collection of applications and experiments across AI, machine learning, full-stack development, computer vision and data analytics.</p></div>
+          <a href="https://github.com/sahanasri18?tab=repositories" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">All GitHub repositories <ArrowUpRight size={18}/></a>
+        </div>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {projects.map((project, index) => (
+            <article key={project.title} className="group flex flex-col rounded-2xl border border-border bg-card p-6 hover-lift">
+              <div className="mb-5 flex items-center justify-between"><span className="text-xs font-bold tracking-[.16em] text-primary">{String(index + 1).padStart(2, '0')}</span><span className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">{project.category}</span></div>
+              <h3 className="text-xl font-semibold leading-snug text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">{project.description}</p>
+              {project.note && <p className="mt-3 text-xs leading-5 text-muted-foreground/80">{project.note}</p>}
+              <div className="mt-5 flex flex-wrap gap-2">{project.tools.map((tool) => <span key={tool} className="rounded-md bg-secondary px-2.5 py-1 text-xs text-secondary-foreground">{tool}</span>)}</div>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 border-t border-border pt-4 text-sm font-semibold text-foreground hover:text-primary transition-colors"><Github size={16}/> View source <ArrowUpRight size={15} className="ml-auto"/></a>
             </article>
           ))}
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default ProjectsSection;

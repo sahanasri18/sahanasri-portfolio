@@ -210,3 +210,66 @@ a:focus-visible, button:focus-visible { outline: 2px solid hsl(var(--primary)); 
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal-item { opacity: 1; transform: none; filter: none; }
 }
+
+
+/* Cinematic kinetic typography intro */
+.cinematic-wash {
+  position: absolute; inset: -25%;
+  pointer-events: none;
+  background: conic-gradient(from 210deg at 50% 50%, transparent 0deg, hsl(174 85% 48% / .12) 42deg, transparent 95deg, hsl(260 80% 60% / .08) 170deg, transparent 240deg);
+  filter: blur(65px);
+  animation: cinematicWash 16s linear infinite;
+}
+.cinematic-scanline {
+  position: absolute; inset: 0; pointer-events: none; opacity: .13;
+  background: repeating-linear-gradient(180deg, transparent 0 3px, hsl(190 90% 70% / .12) 4px, transparent 5px);
+  mask-image: linear-gradient(90deg, transparent, black 55%, transparent);
+}
+.cinematic-kicker { opacity: 0; animation: kickerReveal .7s ease-out .2s forwards; }
+.cinematic-eyebrow { opacity: 0; animation: fadeRise .7s ease-out .35s forwards; }
+.cinematic-name {
+  display: flex; flex-wrap: nowrap; align-items: baseline;
+  white-space: nowrap; perspective: 900px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.6rem, 7.3vw, 6.3rem);
+  font-weight: 700; line-height: .98; letter-spacing: -.075em;
+  color: hsl(210 25% 98%);
+  text-shadow: 0 0 32px hsl(174 85% 55% / .13);
+}
+.name-letter {
+  display: inline-block; opacity: 0;
+  transform: translate3d(0, 115px, -180px) rotateX(-95deg) rotateZ(-14deg) scale(.72);
+  transform-origin: 50% 100%;
+  animation: letterLaunch 1.05s cubic-bezier(.16,1,.3,1) forwards;
+}
+.name-space { display: inline-block; width: .25em; }
+.name-period { color: hsl(174 85% 57%); opacity: 0; animation: periodFlash .5s ease-out 1.6s forwards; }
+.cinematic-rule { height: 2px; width: min(100%, 390px); margin-top: 17px; overflow: hidden; background: hsl(174 75% 45% / .12); }
+.cinematic-rule span { display: block; width: 100%; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, hsl(174 85% 55%), hsl(190 90% 70%), transparent); animation: ruleSweep 1.1s cubic-bezier(.16,1,.3,1) 1.15s forwards; }
+.cinematic-role { opacity: 0; animation: fadeRise .8s ease-out 1.35s forwards; }
+.cinematic-description { opacity: 0; animation: fadeRise .8s ease-out 1.55s forwards; }
+.cinematic-actions { opacity: 0; animation: fadeRise .8s ease-out 1.72s forwards; }
+.cinematic-socials { opacity: 0; animation: fadeRise .8s ease-out 1.9s forwards; }
+.hero-visual-wrap { transform-style: preserve-3d; }
+.hero-3d-scene { filter: drop-shadow(0 24px 45px hsl(174 85% 45% / .08)); }
+@keyframes letterLaunch {
+  0% { opacity: 0; transform: translate3d(0,115px,-180px) rotateX(-95deg) rotateZ(-14deg) scale(.72); filter: blur(12px); }
+  58% { opacity: 1; transform: translate3d(0,-9px,35px) rotateX(9deg) rotateZ(2deg) scale(1.06); filter: blur(0); }
+  78% { transform: translate3d(0,3px,0) rotateX(-3deg) rotateZ(-.5deg) scale(.99); }
+  100% { opacity: 1; transform: translate3d(0,0,0) rotateX(0) rotateZ(0) scale(1); filter: blur(0); }
+}
+@keyframes periodFlash { 0% { opacity: 0; transform: scale(2.8); text-shadow: 0 0 35px hsl(174 90% 65%); } 100% { opacity: 1; transform: scale(1); text-shadow: 0 0 14px hsl(174 90% 65% / .45); } }
+@keyframes ruleSweep { to { transform: scaleX(1); } }
+@keyframes fadeRise { from { opacity: 0; transform: translateY(22px); filter: blur(5px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@keyframes kickerReveal { from { opacity: 0; transform: translateY(-15px) scale(.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes cinematicWash { to { transform: rotate(360deg); } }
+@media (max-width: 420px) {
+  .cinematic-name { font-size: clamp(2.45rem, 12vw, 3.2rem); letter-spacing: -.08em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .name-letter, .name-period, .cinematic-kicker, .cinematic-eyebrow, .cinematic-role, .cinematic-description, .cinematic-actions, .cinematic-socials {
+    opacity: 1; animation: none; transform: none; filter: none;
+  }
+  .cinematic-rule span { transform: scaleX(1); }
+  .cinematic-wash { animation: none; }
+}

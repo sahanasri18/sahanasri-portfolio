@@ -64,6 +64,51 @@
   .hover-lift { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
   .hover-lift:hover { transform: translateY(-5px); box-shadow: var(--shadow-warm); border-color: hsl(var(--primary) / .5); }
 }
+
+/* Smooth, restrained motion: reveal content as it enters the viewport. */
+.reveal-item {
+  opacity:  0;
+  transform: translate3d(0, 28px, 0) scale(.985);
+  filter: blur(4px);
+  transition:
+    opacity 700ms cubic-bezier(.2,.7,.2,1),
+    transform 800ms cubic-bezier(.2,.7,.2,1),
+    filter 700ms cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+#projects article {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+#projects article img {
+  transition: transform 900ms cubic-bezier(.2,.7,.2,1), filter 700ms ease;
+}
+#projects article:hover img {
+  transform: scale(1.055);
+  filter: saturate(1.12);
+}
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible, button:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 4px;
+}
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal-item { opacity: 1; transform: none; filter: none; }
+}

@@ -1,109 +1,53 @@
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "IT Support Incident Analysis Dashboard",
-      description: "Power BI dashboard for IT incident trends, SLA monitoring, and support performance analysis.",
-      toolsUsed: ["Power BI", "SQL", "Excel", "DAX", "Power Query"],
-      keyFeatures: ["Incident volume trend analysis", "SLA compliance KPI tracking", "Issue category and severity filtering"],
-      githubLink: "https://github.com/sahanasri18/IT-Support-Incident-Analysis-Dashboard"
-    },
-    {
-      title: "Multi-Store SKU Forecasting",
-      description: "Demand forecasting analytics across stores and SKUs to support inventory planning.",
-      toolsUsed: ["Python", "Pandas", "Excel", "Data Visualization"],
-      keyFeatures: ["SKU-level demand forecasting", "Seasonal sales trend analysis", "Inventory planning support"],
-      githubLink: "https://github.com/sahanasri18/Multi-Store-SKU-Forecasting"
-    },
-    {
-      title: "Price Elasticity Analysis",
-      description: "Pricing analytics project modeling demand response to price changes for revenue optimization.",
-      toolsUsed: ["Python", "Excel", "Data Visualization", "Statistical Analysis"],
-      keyFeatures: ["Demand elasticity modeling", "Price sensitivity charts", "Revenue impact evaluation"],
-      githubLink: "https://github.com/sahanasri18/Price-Elasticity-Analysis"
-    },
-    {
-      title: "User Segmentation Analysis",
-      description: "Customer segmentation analysis to identify high-value audience groups and behavior-based segments.",
-      toolsUsed: ["Python", "SQL", "Clustering", "Data Visualization"],
-      keyFeatures: ["Segment profiling", "Cohort behavior analysis", "Actionable audience insights"],
-      githubLink: "https://github.com/sahanasri18/user_segmentation"
+      title: "AI Customer Support Intelligence",
+      description: "A full-stack project focused on organizing customer support tickets and applying machine-learning-based ticket classification.",
+      tools: ["Python", "FastAPI", "React", "TypeScript", "MySQL"],
+      link: "https://github.com/sahanasri18/ai-customer-support-intelligence"
     },
     {
       title: "DeClickify – Clickbait Detection",
-      description: "Headline quality and clickbait classification project with interactive reporting.",
-      toolsUsed: ["Python", "NLP", "Streamlit", "Data Visualization"],
-      keyFeatures: ["Headline scoring", "Interactive classification reports", "Exportable CSV results"],
-      githubLink: "https://github.com/sahanasri18/Clickbait_detection"
+      description: "An NLP project focused on identifying clickbait-style headlines through text classification.",
+      tools: ["Python", "NLP", "TensorFlow"],
+      link: "https://github.com/sahanasri18/Clickbait_detection"
+    },
+    {
+      title: "Emotion Detection",
+      description: "A deep-learning project for emotion detection. The repository contains the project implementation and supporting files.",
+      tools: ["Python", "Deep Learning"],
+      link: "https://github.com/sahanasri18/Emotion_detection"
+    },
+    {
+      title: "Call Drop Prediction & Network Issue Detection",
+      description: "A data-focused project exploring call-drop prediction and network issue detection.",
+      tools: ["Python", "Machine Learning"],
+      link: "https://github.com/sahanasri18/Call-Drop-Prediction-Network-Issue-Detection"
+    },
+    {
+      title: "IT Support Incident Analysis Dashboard",
+      description: "A Power BI dashboard for reviewing IT support incidents, issue patterns and service performance.",
+      tools: ["Power BI", "SQL", "Excel", "DAX"],
+      link: "https://github.com/sahanasri18/IT-Support-Incident-Analysis-Dashboard"
     }
   ];
 
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-poppins font-bold text-center mb-12 text-foreground">
-          Featured Projects
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => {
-            const repoName = project.githubLink ? project.githubLink.split('/').pop() : null;
-            const imageSrc = repoName ? `/projects/${repoName}.png` : null;
-            return (
-            <div
-              key={index}
-              className="bg-card border border-border rounded-2xl p-6 shadow-warm hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-            >
-              {imageSrc && (
-                <img
-                  src={imageSrc}
-                  alt={project.title + ' screenshot'}
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                  onError={(e:any) => { e.currentTarget.style.display = 'none'; }}
-                />
-              )}
-
-              <h3 className="text-xl font-semibold text-primary mb-3">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground mb-4">{project.description}</p>
-
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-foreground mb-2">Technologies</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.toolsUsed.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-border/70 px-3 py-1 text-xs text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+        <h2 className="text-4xl font-poppins font-bold text-center mb-4 text-foreground">Featured Projects</h2>
+        <p className="text-center text-muted-foreground mb-12">Selected work across AI, machine learning, Python and data analysis.</p>
+        <div className="grid md:grid-cols-2 gap-7 max-w-6xl mx-auto">
+          {projects.map((project) => (
+            <article key={project.title} className="bg-card border border-border rounded-2xl p-7 shadow-warm flex flex-col">
+              <h3 className="text-xl font-semibold text-primary mb-3">{project.title}</h3>
+              <p className="text-muted-foreground mb-5 leading-relaxed">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tools.map((tool) => <span key={tool} className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">{tool}</span>)}
               </div>
-
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-foreground mb-2">Key Features</p>
-                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
-                  {project.keyFeatures.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300"
-                  >
-                    View GitHub Repository
-                  </a>
-                )}
-              </div>
-            </div>
-          )})}
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex w-fit px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90">View GitHub Repository</a>
+            </article>
+          ))}
         </div>
       </div>
     </section>
